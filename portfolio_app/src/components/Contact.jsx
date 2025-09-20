@@ -1,8 +1,8 @@
 const contactMethods = [
   {
     label: 'Email',
-    value: 'abdullah.alhammadi@example.com',
-    href: 'mailto:abdullah.alhammadi@example.com',
+    value: 'alhmadi.business@gmail.com',
+    href: 'mailto:alhmadi.business@gmail.com',
   },
   {
     label: 'LinkedIn',

@@ -1,12 +1,25 @@
+import { useEffect, useState } from 'react'
 import Hero from '../components/Hero.jsx'
 import About from '../components/About.jsx'
 import Skills from '../components/Skills.jsx'
 import Projects from '../components/Projects.jsx'
 import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx'
+import Loader from '../components/Loader.jsx'
 import './App.css'
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 6000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="app" id="home">
       <header className="app__section app__section--accent">
