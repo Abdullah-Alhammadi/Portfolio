@@ -1,20 +1,4 @@
-const contactMethods = [
-  {
-    label: 'Email',
-    value: 'alhmadi.business@gmail.com',
-    href: 'mailto:alhmadi.business@gmail.com',
-  },
-  {
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/abdullah-alhammadi',
-    href: 'https://www.linkedin.com/in/abdullah-alhammadi',
-  },
-  {
-    label: 'GitHub',
-    value: 'github.com/abdullah-alhammadi',
-    href: 'https://github.com/abdullah-alhammadi',
-  },
-]
+import { CONTACT_METHODS } from '../data/links.js'
 
 function Contact() {
   return (
@@ -31,12 +15,22 @@ function Contact() {
       <div className="contact__card">
         <h3>Start a conversation</h3>
         <ul className="contact__list">
-          {contactMethods.map((method) => (
-            <li key={method.label}>
-              <span>{method.label}</span>
-              <a href={method.href}>{method.value}</a>
-            </li>
-          ))}
+          {CONTACT_METHODS.map((method) => {
+            const isExternal = method.href?.startsWith('http')
+
+            return (
+              <li key={method.label}>
+                <span>{method.label}</span>
+                {method.href ? (
+                  <a href={method.href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noreferrer' : undefined}>
+                    {method.value}
+                  </a>
+                ) : (
+                  <span>{method.value}</span>
+                )}
+              </li>
+            )
+          })}
         </ul>
       </div>
     </div>

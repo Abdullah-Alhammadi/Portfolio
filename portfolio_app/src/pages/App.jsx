@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Hero from '../components/Hero.jsx'
 import About from '../components/About.jsx'
 import Skills from '../components/Skills.jsx'
-import Projects from '../components/Projects.jsx'
+// import Projects from '../components/Projects.jsx'
 import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx'
 import Loader from '../components/Loader.jsx'
@@ -35,9 +35,9 @@ function App() {
           <Skills />
         </section>
 
-        <section className="app__section" id="projects">
+        {/* <section className="app__section" id="projects">
           <Projects />
-        </section>
+        </section> */}
 
         <section className="app__section app__section--muted" id="contact">
           <Contact />
